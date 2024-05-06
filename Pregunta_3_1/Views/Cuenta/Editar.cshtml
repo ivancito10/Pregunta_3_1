@@ -1,0 +1,35 @@
+﻿@model Pregunta_3_1.Models.Cuenta
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="margin-top:30px">
+    <div class="col-sm-12">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4>Editar cuenta</h4>
+            </div>
+            <div class="panel-body">
+                <form action="@Url.Action("Editar","Cuenta")" method="post">
+                    <div class="form-group">
+                        <label>Nombre de Persona</label>
+                        <input type="text" class="form-control" value="@Model.NombrePersona" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo de Cuenta</label>
+                        <input type="text" class="form-control" name="TipoCuenta" value="@Model.TipoCuenta" />
+                    </div>
+                    <div class="form-group">
+                        <label>Saldo</label>
+                        <input type="text" class="form-control" name="Saldo" value="@Model.Saldo" />
+                    </div>
+                    <!-- Agrega un campo oculto para enviar el ID de la cuenta -->
+                    <input type="hidden" name="CuentaID" value="@Model.CuentaID" />
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    <a class="btn btn-warning" href="@Url.Action("Inicio", "Cuenta")">Volver</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

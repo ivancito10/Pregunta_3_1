@@ -1,0 +1,29 @@
+﻿@model Pregunta_3_1.Models.Cuenta
+@{
+    ViewBag.Title = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="margin-top:30px">
+    <div class="col-sm-12">
+
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4>Eliminar cuenta</h4>
+            </div>
+            <div class="panel-body">
+                <div class="alert alert-danger">
+                    ¿Desea eliminar la cuenta @Html.DisplayTextFor(m => m.TipoCuenta) del cliente @Html.DisplayTextFor(m => m.NombrePersona)?
+                </div>
+                <form action="@Url.Action("Eliminar","Cuenta")" method="post">
+                    <input type="hidden" class="form-control" name="CuentaID" value="@Html.DisplayTextFor(m => m.CuentaID)" />
+
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                    <a class="btn btn-warning" href="@Url.Action("Inicio", "Cuenta")">Volver</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

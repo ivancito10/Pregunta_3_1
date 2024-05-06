@@ -1,0 +1,38 @@
+﻿@model Pregunta_3_1.Models.Cuenta
+
+@{
+    ViewBag.Title = "Registrar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="margin-top:30px">
+    <div class="col-sm-12">
+
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4>Nueva cuenta</h4>
+            </div>
+            <div class="panel-body">
+                <form action="@Url.Action("Registrar", "Cuenta")" method="post">
+                    
+                    <div class="form-group">
+                        <label>PersonaID</label>
+                        <input type="text" class="form-control" name="PersonaID" />
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo Cuenta</label>
+                        <input type="text" class="form-control" name="TipoCuenta" />
+                    </div>
+                    <div class="form-group">
+                        <label>Saldo</label>
+                        <input type="text" class="form-control" name="Saldo" />
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                    <a class="btn btn-warning" href="@Url.Action("Inicio", "Cuenta")">Volver</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
